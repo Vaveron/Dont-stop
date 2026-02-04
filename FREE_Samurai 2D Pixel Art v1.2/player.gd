@@ -24,15 +24,18 @@ func _physics_process(delta: float) -> void:
 	var current_speed = SPRINT_SPEED if Input.is_action_pressed("Shift") else SPEED
 	if direction:
 		if Input.is_action_pressed("CTRL"):
-			time_ctrl += 1
-			anim.play("ctrl")
-			Collision.scale.x = 1.9
-			Collision.scale.y = 0.4
-			Collision.position.y = 72.0
-			if direction == 1:
-				velocity.x = move_toward(velocity.x, 0, past_speed * delta)
-			elif direction == -1:
-				velocity.x = move_toward(velocity.x, 0, -past_speed * delta)
+			if is_on_floor():
+				time_ctrl += 1
+				anim.play("ctrl")
+				Collision.scale.x = 1.9
+				Collision.scale.y = 0.4
+				Collision.position.y = 72.0
+				if direction == 1:
+					velocity.x = move_toward(velocity.x, 0, past_speed * delta)
+				elif direction == -1:
+					velocity.x = move_toward(velocity.x, 0, -past_speed * delta)
+			else:
+				velocity.y = -JUMP_VELOCITY * 2
 		elif current_speed > 200:
 			if is_on_floor() and velocity.y == 0:
 				anim.play("run")
