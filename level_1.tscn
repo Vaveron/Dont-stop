@@ -651,6 +651,21 @@ texture = ExtResource("4_bjebc")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5rr72")
 
+[sub_resource type="GDScript" id="GDScript_5hph3"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"health:\" + str($\"../../Player/Player\".health)
+	pass
+"
+
 [node name="Level_1" type="Node2D" unique_id=140623573]
 
 [node name="BG_Menu" type="Parallax2D" parent="." unique_id=391158954]
@@ -700,3 +715,16 @@ scale = Vector2(0.15, 0.15)
 [node name="Mob_test" parent="Mobs" unique_id=1816324946 instance=ExtResource("6_5hph3")]
 position = Vector2(1228, 972)
 scale = Vector2(0.15, 0.15)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1111177397]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1984972558]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+offset_right = 97.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 36
+text = "Health"
+script = SubResource("GDScript_5hph3")

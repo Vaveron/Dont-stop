@@ -102,3 +102,8 @@ target_position = Vector2(300, 100)
 [node name="RayCast2D" type="RayCast2D" parent="Left" unique_id=1646629229]
 position = Vector2(2, 0)
 target_position = Vector2(-300, 100)
+
+[node name="Attack" type="Node2D" parent="." unique_id=1694077634]
+
+[node name="RayCast2D" type="RayCast2D" parent="Attack" unique_id=1727677957]
+target_position = Vector2(132.2, -150)
