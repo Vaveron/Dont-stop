@@ -5,8 +5,10 @@ var speed = 300.0
 var random_direction = 0
 var random_direction_time = 0
 var past_position_x = 0
+var past_position_x_for_direct = 0
 var is_attacking = false
 var has_hit_player = false
+var health = 50
 # Called when the node enters the scene tree for the first time.
 @onready var anim = get_node('AnimatedSprite2D')
 @onready var RayCast = get_node('RayCast2D')
@@ -15,29 +17,26 @@ var has_hit_player = false
 @onready var AttackRayCast = $Attack/RayCast2D
 func _physics_process(delta: float) -> void:
 	var distance_for_player = update_distance()
+	var change_position_in_move = past_position_x_for_direct - self.position.x
+	if change_position_in_move == 0:
+		logic_move_without_player()
+	past_position_x_for_direct = self.position.x
 	#Гравитация
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
+	if health <= 0:
+		anim.play("Death")
+		await anim.animation_finished  
+		queue_free()
 	#Работа с направлением на игрока
 	var player = $"../../Player/Player"
 	var direction = (player.position - self.position).normalized()
 	RayCast.target_position = direction * 5000.0
 	
+	
+	#В случае если игрок снизу или сверху
 	if abs(direction.x) < 0.2:
-		var change_position = past_position_x - self.position.x
-		past_position_x = self.position.x
-		Go = false
-		if random_direction_time == 0:
-			random_direction = randi_range(0, 1) * 2 - 1
-			print("Направление движения моба:", random_direction )
-			random_direction_time += 1
-		if change_position == 0:
-			if random_direction == 1:
-				random_direction == -1
-			else: 
-				random_direction == 1
-		velocity.x == speed * random_direction * 10
+		logic_move_without_player()
 	elif RayCast.is_colliding():
 		var object = RayCast.get_collider()
 		if object.name == 'Player':
@@ -54,10 +53,6 @@ func _physics_process(delta: float) -> void:
 			var object = RightRayCast.get_collider()
 			if object.name != "Player":
 				velocity.y = -400.0
-			
-			
-		
-	
 	#Это движение
 	if distance_for_player != null:
 		if Go and distance_for_player > 25.0:
@@ -75,7 +70,20 @@ func _physics_process(delta: float) -> void:
 			velocity.x == 0
 	move_and_slide()
 
-
+func logic_move_without_player():
+	var change_position = past_position_x - self.position.x
+	past_position_x = self.position.x
+	Go = false
+	if random_direction_time == 0:
+		random_direction = randi_range(0, 1) * 2 - 1
+		print("Направление движения моба:", random_direction )
+		random_direction_time += 1
+		if change_position == 0:
+			if random_direction == 1:
+				random_direction == -1
+			else: 
+				random_direction == 1
+		velocity.x == speed * random_direction * 10
 func update_distance():
 	RayCast.force_raycast_update()
 	if RayCast.is_colliding():
@@ -85,6 +93,10 @@ func update_distance():
 		return distance
 	return null  # Нет столкновения
 	
+	
+func take_damage(amount):
+	health -= amount
+
 func Attack(direct: Vector2):
 	if is_attacking:
 		return  # Выходим если уже атакуем
@@ -92,6 +104,7 @@ func Attack(direct: Vector2):
 	is_attacking = true
 	has_hit_player = false
 	var attack_range = 100.0
+	anim.play("Attack")
 	create_tween().tween_method(
 		func(t: float):
 			var angle = lerp(0.0, PI, t)

@@ -2,11 +2,89 @@
 
 [ext_resource type="Script" uid="uid://u6jlqhxxmbwp" path="res://Mob_test.tscn.gd" id="1_qvfyr"]
 [ext_resource type="Texture2D" uid="uid://uf7jiclniojb" path="res://Human Male Model/Sections/PNG/HMMRunBare.png" id="2_8v338"]
+[ext_resource type="Texture2D" uid="uid://cwl3d10nncrli" path="res://Human Male Model/Sections/PNG/HMMSwipe-Sheet.png" id="2_q0qnp"]
 [ext_resource type="Texture2D" uid="uid://f7b1bwh3uqfu" path="res://Human Male Model/Sections/PNG/HMMIdleBare.png" id="3_q0qnp"]
+[ext_resource type="Texture2D" uid="uid://dle2pe6f36jgv" path="res://Human Male Model/Sections/PNG/HMMDeathBare.png" id="3_ww3ph"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxxyl"]
 radius = 13.141685
 height = 258.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r28cc"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fn84"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkl5o"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhhl"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jthl"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3e51"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfepf"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxpas"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftvf1"]
+atlas = ExtResource("2_q0qnp")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou0f3"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ned3l"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4nhb"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfp3m"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8au3j"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3llm"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1821n"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgfj"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j8ki"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is3rl"]
+atlas = ExtResource("3_ww3ph")
+region = Rect2(2304, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ww3ph"]
 atlas = ExtResource("2_8v338")
@@ -44,6 +122,73 @@ region = Rect2(256, 0, 256, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_r28cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fn84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkl5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhhl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jthl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3e51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfepf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uxpas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftvf1")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou0f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ned3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4nhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfp3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8au3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3llm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1821n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbgfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j8ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is3rl")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ww3ph")
 }, {
 "duration": 1.0,
@@ -77,17 +222,33 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_ww3ph"]
+script/source = "extends Label
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = str($\"..\".health)
+	pass
+"
+
 [node name="Mob_test" type="CharacterBody2D" unique_id=1816324946]
 script = ExtResource("1_qvfyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165853884]
+light_mask = 2
+visibility_layer = 2
 scale = Vector2(4.87, 1)
 shape = SubResource("CapsuleShape2D_cxxyl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1226297808]
 sprite_frames = SubResource("SpriteFrames_8v338")
-animation = &"idle"
-frame_progress = 0.6410999
+animation = &"Attack"
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=2108335615]
 target_position = Vector2(0, 1000)
@@ -107,3 +268,13 @@ target_position = Vector2(-300, 100)
 
 [node name="RayCast2D" type="RayCast2D" parent="Attack" unique_id=1727677957]
 target_position = Vector2(132.2, -150)
+
+[node name="Label" type="Label" parent="." unique_id=1454335682]
+offset_left = -21.0
+offset_top = -174.0
+offset_right = 23.0
+offset_bottom = -129.0
+theme_override_font_sizes/font_size = 32
+text = "HP"
+horizontal_alignment = 1
+script = SubResource("GDScript_ww3ph")

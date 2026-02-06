@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0skcn2dalnr6"
-path="res://.godot/imported/HMMSwipe.png-2f281aa7c7439e2894b38d853f74840c.ctex"
+uid="uid://cwl3d10nncrli"
+path="res://.godot/imported/HMMSwipe-Sheet.png-f81f9769f433a8749ec6b2955edd2432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Human Male Model/Sections/PNG/HMMSwipe.png"
-dest_files=["res://.godot/imported/HMMSwipe.png-2f281aa7c7439e2894b38d853f74840c.ctex"]
+source_file="res://Human Male Model/Sections/PNG/HMMSwipe-Sheet.png"
+dest_files=["res://.godot/imported/HMMSwipe-Sheet.png-f81f9769f433a8749ec6b2955edd2432.ctex"]
 
 [params]
 

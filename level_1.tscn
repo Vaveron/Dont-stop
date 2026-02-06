@@ -713,7 +713,23 @@ scale = Vector2(0.15, 0.15)
 [node name="Mobs" type="Node2D" parent="." unique_id=269847779]
 
 [node name="Mob_test" parent="Mobs" unique_id=1816324946 instance=ExtResource("6_5hph3")]
-position = Vector2(1228, 972)
+position = Vector2(1370, 939.00006)
+scale = Vector2(0.15, 0.15)
+
+[node name="Mob_test2" parent="Mobs" unique_id=1021117727 instance=ExtResource("6_5hph3")]
+position = Vector2(1243, 984.00006)
+scale = Vector2(0.15, 0.15)
+
+[node name="Mob_test3" parent="Mobs" unique_id=320010786 instance=ExtResource("6_5hph3")]
+position = Vector2(1763, 936.00006)
+scale = Vector2(0.15, 0.15)
+
+[node name="Mob_test4" parent="Mobs" unique_id=1517945967 instance=ExtResource("6_5hph3")]
+position = Vector2(2133, 929.00006)
+scale = Vector2(0.15, 0.15)
+
+[node name="Mob_test5" parent="Mobs" unique_id=1240806973 instance=ExtResource("6_5hph3")]
+position = Vector2(1450, 1034)
 scale = Vector2(0.15, 0.15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1111177397]
