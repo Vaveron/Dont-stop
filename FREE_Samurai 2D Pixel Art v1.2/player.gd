@@ -13,6 +13,7 @@ var is_attacking = false
 @onready var anim = get_node("AnimatedSprite2D")
 @onready var Collision = get_node("CollisionShape2D")
 @onready var AttackRayCast = $Attack_sword/RayCast2D
+@onready var ImpulsesArea = $Impulse/CollisionShape2D
 
 func _physics_process(delta: float) -> void:
 	var mouse_pos = get_global_mouse_position()
@@ -96,7 +97,6 @@ func Attack(direct: Vector2):
 	has_hit_player = false
 	var attack_range = 100.0
 	anim.play("Attack")
-	velocity.x = 250 * direct.x
 	create_tween().tween_method(
 		func(t: float):
 			var angle = lerp(0.0, PI, t)

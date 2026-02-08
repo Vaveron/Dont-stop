@@ -55,14 +55,14 @@ func _physics_process(delta: float) -> void:
 				velocity.y = -400.0
 	#Это движение
 	if distance_for_player != null:
-		if Go and distance_for_player > 25.0:
+		if Go and distance_for_player > 30.0:
 			velocity.x = direction.x * speed
 			anim.play('Run')	
 			if direction.x < 0:
 				anim.flip_h = true
 			elif direction.x > 0:
 				anim.flip_h = false
-		elif distance_for_player < 25.0:
+		elif distance_for_player < 30.0:
 			Go = false
 			Attack(direction)
 		else: 

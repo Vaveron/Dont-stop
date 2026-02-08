@@ -238,11 +238,13 @@ func _process(delta: float) -> void:
 "
 
 [node name="Mob_test" type="CharacterBody2D" unique_id=1816324946]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_qvfyr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1165853884]
 light_mask = 2
-visibility_layer = 2
+visibility_layer = 3
 scale = Vector2(4.87, 1)
 shape = SubResource("CapsuleShape2D_cxxyl")
 
@@ -257,23 +259,27 @@ target_position = Vector2(0, 1000)
 
 [node name="RayCast2D" type="RayCast2D" parent="Right" unique_id=975907658]
 target_position = Vector2(300, 100)
+collision_mask = 5
 
 [node name="Left" type="Node2D" parent="." unique_id=1871678706]
 
 [node name="RayCast2D" type="RayCast2D" parent="Left" unique_id=1646629229]
 position = Vector2(2, 0)
 target_position = Vector2(-300, 100)
+collision_mask = 5
 
 [node name="Attack" type="Node2D" parent="." unique_id=1694077634]
 
 [node name="RayCast2D" type="RayCast2D" parent="Attack" unique_id=1727677957]
 target_position = Vector2(132.2, -150)
+collision_mask = 7
 
 [node name="Label" type="Label" parent="." unique_id=1454335682]
 offset_left = -21.0
 offset_top = -174.0
 offset_right = 23.0
 offset_bottom = -129.0
+theme_override_colors/font_color = Color(1, 0.08009117, 0.093751974, 1)
 theme_override_font_sizes/font_size = 32
 text = "HP"
 horizontal_alignment = 1
